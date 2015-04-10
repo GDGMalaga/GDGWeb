@@ -1,31 +1,36 @@
-{% load staticfiles %}
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>GDG Málaga {% block 'title' %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
 </head>
 <body>
+
 <div id="header">
 	<!-- TODO -->
     <div class="container">
         <!--Vamos a ver si va el NAV-->
         <div id="menu" class="row">
-            <h1 class="menu-logo hidden-phone">GDG Málaga</h1>
+            <h1 class="menu-logo hidden-phone"></h1>
             <ul class="menu-list pull-right">
-                <li><a tabindex="1" class="menu-item active">Información</a></li>
+                <li><a tabindex="1" class="menu-item">Información</a></li>
                 <li><a tabindex="2" class="menu-item">Calendario</a></li>
                 <li><a tabindex="3" class="menu-item">Grupos</a></li>
 
             </ul>
         </div>
 
-
     </div>
 </div>
-{% block 'content' %}
 
+{% block 'content' %}
+<div id="content">
+
+
+    </div>
 
 {% endblock%}
 <footer>
