@@ -1,0 +1,50 @@
+#header
+{
+	background: #F1F1F1;
+}
+.header-mobile { background: #000; padding: 8px; height: 30px;}
+
+.menu-list { list-style: none; margin: 0; padding: 0; }
+.menu-list li { float:left; }
+.menu-list .menu-sublist { display: none; }
+.menu-item {
+	display: block;
+	font-weight: 600;
+	color: #FFF;
+	padding: 60px 20px 20px 20px;
+	font-size: 14px;
+	/*text-shadow: 1px 1px 0 #000;*/
+}
+.mobile .menu-item { padding: 10px; }
+.menu-item[href="#tour"] { background-color: #DA4940; }
+.menu-item[href="#programa"] { background-color: #4D8CF6; }
+.menu-item[href="#speakers"] { background-color: #0A9953; }
+.menu-item[href="#sponsors"] { background-color: #F8C63F; }
+.menu-item[href="#colaboradores"] { background-color: #4C4A4B; }
+.menu-item:hover { color: #FFF; text-decoration: none; }
+.menu-item:focus, .menu-item.active { outline: none; }
+.menu-item.active {
+	background-image: url('../img/menu-item.png');
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+
+.menu-logo { 
+	 height: 0; width: 450px;
+	position: absolute; padding-top: 100px; overflow: hidden; margin: 0;
+	transition: all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+}
+.menu-logo.compact {
+	padding-top: 84px;
+	margin-top: -14px;
+}
+.container {
+	width: 940px;
+}
+.row {
+  margin-left: -20px;
+  *zoom: 1;
+}

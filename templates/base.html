@@ -4,11 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>GDG Málaga {% block 'title' %}{% endblock %}</title>
+    <link href="/static/css/mihoja.css" type="text/css"  rel="stylesheet" />
 </head>
 <body>
-<header>
+<div id="header">
 	<!-- TODO -->
-</header>
+    <div class="container">
+        <!--Vamos a ver si va el NAV-->
+        <div id="menu" class="row">
+            <h1 class="menu-logo hidden-phone">GDG Málaga</h1>
+            <ul class="menu-list pull-right">
+                <li><a tabindex="1" class="menu-item active">Información</a></li>
+                <li><a tabindex="2" class="menu-item">Calendario</a></li>
+                <li><a tabindex="3" class="menu-item">Grupos</a></li>
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
 {% block 'content' %}
 
 
