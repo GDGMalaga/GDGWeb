@@ -12,14 +12,17 @@
 	<!-- TODO -->
     <div class="container">
         <!--Vamos a ver si va el NAV-->
+        {% block nav%}
         <div id="menu" class="row">
             <h1 class="menu-logo hidden-phone"></h1>
             <ul class="menu-list pull-right">
-                <li><a tabindex="1" class="menu-item">Información</a></li>
-                <li><a tabindex="2" class="menu-item">Calendario</a></li>
-                <li><a tabindex="3" class="menu-item">Grupos</a></li>
+                <li>{% block nav-home %}<a tabindex="1" class="menu-item" href="/">Información</a>{% endblock %}</li>
+                <li>{% block nav-calendar %}<a tabindex="2" class="menu-item">Calendario</a>{% endblock %}</li>
+                <li>{% block nav-grupos %}<a tabindex="3" class="menu-item">Grupos</a>{% endblock %}</li>
+                <li>{% if user.is_authenticated == False %} <a tabindex="4" class="menu-item">Accede</a> {% endif %}</li>
             </ul>
         </div>
+        {% endblock %}
     </div>
 </div>
 <div id="content">
@@ -33,7 +36,7 @@
                 <h4>Queremos ayudar a difundir estos conocimientos prácticos, tanto si lo que quieres es aprender, como si tú quieres ser el que los de a conocer. </h4>
                 Creemos que el hecho de encontrarnos todos tan cerca, estudiando o trabajando en la Universidad de Málaga, puede ayudar a que estas experiencias y conocimientos nos lleguen más fácilmente.
                 Siempre es mejor aprender en compañía y, ya de paso, divertirse en el proceso. :)
-            </p>
+
             <p>
                 Contamos con <a href="https://groups.google.com/forum/#!forum/gtuguma"> un grupo en Google Groups</a> para que podáis dejar vuestras opiniones y sugerencias,
                 y podáis poneros en contacto con gente con intereses comunes.
@@ -48,7 +51,7 @@
                 Uno de los aspectos fundamentales de estos grupos es la organización de eventos y actividades, aprovechando esa cercanía para contarnos las cosas cara a cara.
                 Y recuerda: en un GTUG la clave son las personas. Nuesto objetivo es poner en contacto a estas personas, y proporcionar un marco para que todos podamos salir beneficiados de estos contactos.
                 <hr>
-                Parafraseando a JFK:no te preguntes que puede hacer tu GTUG por tí, pregúntate qué puedes hacer tú por sus usuarios ;) </p>
+                Parafraseando a JFK:no te preguntes que puede hacer tu GTUG por tí, pregúntate qué puedes hacer tú por sus usuarios ;)
             <h3>Obviamente esto es una prueba</h3>
         </div>
     </div>

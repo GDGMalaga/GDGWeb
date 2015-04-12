@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 
 urlpatterns = patterns('',
 	url(r'^$', views.home, name='home'),
+    url(r'^$', views.calendario, name='calendario')
 )
 
 
