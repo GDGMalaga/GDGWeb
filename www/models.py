@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -16,16 +17,23 @@ class UserProfile(models.Model):
 
 class Grupo(models.Model):
     """
-    Grupo (?) 
+    Grupo de estudio de una tecnologia
+
+    El Grupo deberia tener como relación opcional una lista de cursos que ver. 
+    Por ejemplo el grupo de estudio de Django podria reunirse para el curso de Django de Coursera, suponiendo que haya uno.
     """
 #   cursos = models.ForeignKey(Curso)
     name = models.CharField(max_length=50)
     pub_date = models.DateField()
 
+    def __unicode__(self):
+        return "<Grupo : %s" % (self.name)
+
 
 class Curso(models.Model):
     """
-    Curso (?)
+    Curso que se realizará en el GDG (como curso de Django, por ejemplo ;) )
+    Curso debería tener una relación con Grupo, ¿no?
     """
     name = models.CharField(max_length=50)
     pub_date = models.DateField()
