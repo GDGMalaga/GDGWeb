@@ -5,7 +5,11 @@
 	<meta charset="UTF-8">
 	<title>GDG Málaga {% block 'title' %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
 {% block nav%}
@@ -45,6 +49,25 @@
                         {% if user.is_authenticated == False %} 
                         <a tabindex="4" class="menu-item" href="{% url 'www.views.accede' %}">Accede</a> 
                         {% endif %}
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <!--<li><a href="/signup">Sign Up</a></li>
+                    <li class="divider-vertical"></li>-->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
+                        <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+                            <form method="post" action="login" accept-charset="UTF-8">
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
+                                <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
+                                <input style="float: left; margin-right: 10px;" type="checkbox" name="remember-me" id="remember-me" value="1">
+                                <label class="string optional" for="user_remember_me"> Remember me</label>
+                                <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
+                                <label style="text-align:center;margin-top:5px">or</label>
+                                <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
+                                <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->
