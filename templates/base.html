@@ -8,26 +8,52 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
 </head>
 <body>
-<div id="header">
-	<!-- TODO -->
-    <div class="container">
-        <!--Vamos a ver si va el NAV-->
-        {% block nav%}
-        <div id="menu" class="row">
-            <h1 class="menu-logo hidden-phone"></h1>
-            <ul class="menu-list pull-right">
-                <li>{% block nav-home %}<a tabindex="1" class="menu-item" href="/">Información</a>{% endblock %}</li>
-                <li>{% block nav-calendar %}<a tabindex="2" class="menu-item" href="{% url 'www.views.calendario' %}">Calendario</a>{% endblock %}</li>
-                <li>{% block nav-grupos %}<a tabindex="3" class="menu-item" href="{% url 'www.views.grupos' %}">Grupos</a>{% endblock %}</li>
-                <li>{% if user.is_authenticated == False %} <a tabindex="4" class="menu-item" href="{% url 'www.views.accede' %}">Accede</a> {% endif %}</li>
-            </ul>
-        </div>
-        {% endblock %}
-    </div>
-</div>
-
-{% block content %}
+{% block nav%}
+    <!--fixed navbar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">
+                    <img alt="gdgmalaga" src="{% static 'img/logo.png' %}"/>
+                </a>
+                <!--<h1 class="menu-logo hidden-phone navbar-brand"></h1>-->
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        {% block nav-home %}
+                            <a tabindex="1" class="menu-item" href="/"> Información</a>
+                        {% endblock %}
+                    </li>
+                    <li>
+                        {% block nav-calendar %}
+                        <a tabindex="2" class="menu-item" href="{% url 'www.views.calendario' %}">Calendario</a>
+                        {% endblock %}
+                    </li>
+                    <li>
+                        {% block nav-grupos %}
+                        <a tabindex="3" class="menu-item" href="{% url 'www.views.grupos' %}">Grupos</a>
+                        {% endblock %}
+                    </li>
+                    <li>
+                        {% if user.is_authenticated == False %} 
+                        <a tabindex="4" class="menu-item" href="{% url 'www.views.accede' %}">Accede</a> 
+                        {% endif %}
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+    </nav><!--/.navbar-fixed-top-->
+{% endblock %}
 <div id="content">
+{% block content %}
+
     <div id="tour" class="visor">
         <div class="container">
 			<h3>¿Qué es el GDG?</h3>
@@ -55,10 +81,27 @@
                 <hr>
                 Parafraseando a JFK:no te preguntes que puede hacer tu GDG por tí, pregúntate qué puedes hacer tú por sus usuarios ;)
             <h3>Obviamente esto es una prueba</h3>
+            <h3>¿Qué es el GDG?</h3>
+            <hr>
+            <p>El GDG es un grupo de desarrollo, blablabla, BAENA TROLOLOLO </p>
+            <p>El GDG UMA tiene como objetivo difundir las <a href="https://developers.google.com/?hl=es">tecnologías de Google en Málaga</a>.
+                Queremos que alumnos y docentes puedan ampliar los conocimientos que obtienen con las clases, incorporando temas tan prácticos como son las tecnologías de Google, como Android o Google Maps.
+                <h4>Queremos ayudar a difundir estos conocimientos prácticos, tanto si lo que quieres es aprender, como si tú quieres ser el que los de a conocer. </h4>
+                Creemos que el hecho de encontrarnos todos tan cerca, estudiando o trabajando en la Universidad de Málaga, puede ayudar a que estas experiencias y conocimientos nos lleguen más fácilmente.
+                Siempre es mejor aprender en compañía y, ya de paso, divertirse en el proceso. :)
+
+            <p>
+                Contamos con <a href="https://groups.google.com/forum/#!forum/gtuguma"> un grupo en Google Groups</a> para que podáis dejar vuestras opiniones y sugerencias,
+                y podáis poneros en contacto con gente con intereses comunes.
+                De ahí pueden surgir ideas para próximos eventos y actividades, como tutoriales, charlas sobre experiencias, hackatones
+                (¡quedar para programar como locos!)
+                o simplemente reunirnos para vernos las caras mientras nos tomamos algo.
+            </p>
         </div>
     </div>
-</div>
+
 {% endblock%}
+</div>
 <footer>
 	<!-- TODO -->
 </footer>
