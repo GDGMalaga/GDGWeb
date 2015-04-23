@@ -54,6 +54,7 @@
                 <ul class="nav pull-right">
                     <!--<li><a href="/signup">Sign Up</a></li>
                     <li class="divider-vertical"></li>-->
+                    {% if user.is_authenticated == True %}
                     <li class="dropdown" id="menuLogin">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Sign In <strong class="caret"></strong></a>
                         <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 10px;">
@@ -69,6 +70,27 @@
                             </form>
                         </div>
                     </li>
+                    {% else %}
+                    <!--TODO: To be fixed when model is ready. This is just a place-holder for now-->
+                    {% with name="Antonio" %}
+                    <li class="dropdown" id="menuProfile">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">{{ name }} <strong class="caret"></strong></a>
+                        <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 10px;">
+                            <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
+                            <h2>Nicole Pearson</h2>
+                            <p><strong>About: </strong> Web Designer / UI. </p>
+                            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+                            <p><strong>Skills: </strong>
+                                <span class="tags">html5</span> 
+                                <span class="tags">css3</span>
+                                <span class="tags">jquery</span>
+                                <span class="tags">bootstrap3</span>
+                            </p>
+                        </div>
+                    </li>
+                    {% endwith %}
+                    <!--/TODO-->
+                    {% endif %}
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container -->
