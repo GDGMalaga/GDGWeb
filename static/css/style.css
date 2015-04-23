@@ -29,11 +29,17 @@ p.lead {
 }
 
 hr {
-	height: 5px;
-	border: 0px;
-	background: url(../img/hr.gif) no-repeat;
+	height: 5px!important;
+	width: 100%;
+	text-align: center;
+	border: 0px!important;
+	background: url(../img/hr.gif) no-repeat center;
 	margin-top: 0px;
 	margin-bottom: 20px;
+}
+
+hr:after{
+	display:inline;
 }
 
 .navbar-inner {
