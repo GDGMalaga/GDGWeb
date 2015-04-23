@@ -1,2 +1,2 @@
-# GDGWeb [![Build Status](https://travis-ci.org/GDGMalaga/GDGWeb.svg?branch=master)](https://travis-ci.org/GDGMalaga/GDGWeb) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
+# GDGWeb [![Build Status](https://travis-ci.org/GDGMalaga/GDGWeb.svg?branch=master)](https://travis-ci.org/GDGMalaga/GDGWeb) [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org) [![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues) [![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls)
 Website for a GDG Chapter.
