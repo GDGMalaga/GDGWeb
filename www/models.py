@@ -10,6 +10,8 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User)
     # Any extra data
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __unicode__(self):
         return "<UserProfile: %s>" % (self.user.username)
