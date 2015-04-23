@@ -36,6 +36,27 @@ hr {
 	margin-bottom: 20px;
 }
 
+.navbar-inner {
+    min-height: 0px;
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 84px;
+    height: 84px;
+    padding-top: 0;
+}
+
+.navbar-brand {
+	padding-top: 0px!important;
+}
+
+#navbar a{
+	margin-top: 15px;
+	padding-bottom: 0px;
+	height: 67px;
+}
+
 /*------------------------------------------------------------------------------------ Overlay Mensajes */
 .overlay { background: #000; opacity: 0.5; filter: alpha(opacity=50); position: fixed; top:0; bottom: 0; left: 0; right: 0; z-index: 1000; }
 .msg_cover { position: fixed; top:50%; left:50%; width: 300px; height: 150px; margin: -75px 0 0 -150px; background: #FFF; z-index: 1001; -moz-box-shadow: 2px 2px 25px rgba(0,0,0,0.5); -webkit-box-shadow: 2px 2px 25px rgba(0,0,0,0.2); -ms-box-shadow: 2px 2px 25px rgba(0,0,0,0.2); box-shadow: 2px 2px 25px rgba(0,0,0,0.5); text-align: center; }
@@ -82,8 +103,8 @@ hr {
 }
 
 .menu-logo {
-    background: url("../img/logo.png"); no-repeat left bottom; height: 40px; width: 350px;*/
-	position: relative; padding-top: 50px; //*overflow: hidden; margin: 0;*/
+    background: url("../img/logo.png"); /*no-repeat left bottom; height: 40px; width: 350px;*/
+	position: relative; padding-top: 50px; /*overflow: hidden; margin: 0;*/
 	transition: all 0.2s ease;
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
@@ -97,6 +118,7 @@ hr {
 /*------------------------------------------------------------------------------------ Contenido */
 #content
 {
+	padding-top: 80px;
 	overflow: auto;
 	transition: background-position 0.5s ease;
 	-webkit-transition: background-position 0.5s ease;
