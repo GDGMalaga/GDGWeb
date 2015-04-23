@@ -51,3 +51,4 @@ def login(request):
                 return HttpResponseRedirect('/')
 
     return render(request, 'home.html')
+    
