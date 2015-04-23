@@ -10,10 +10,19 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User)
     # Any extra data
+    about = models.CharField(max_length=200)
+    hobbies = models.CharField(max_length=200)
+
 
     def __unicode__(self):
         return "<UserProfile: %s>" % (self.user.username)
 
+class Skill(models.Model):
+    skill_name = models.CharField(max_length=30)
+    UserProfile = models.ForeignKey(UserProfile)
+
+    def __unicode__(self):
+        return "Habilidad : %s" % (self.skill_name)
 
 class Grupo(models.Model):
     """
@@ -22,7 +31,7 @@ class Grupo(models.Model):
     El Grupo deberia tener como relación opcional una lista de cursos que ver. 
     Por ejemplo el grupo de estudio de Django podria reunirse para el curso de Django de Coursera, suponiendo que haya uno.
     """
-#   cursos = models.ForeignKey(Curso)
+    #cursos = models.ForeignKey(Curso)
     name = models.CharField(max_length=50)
     pub_date = models.DateField()
 
