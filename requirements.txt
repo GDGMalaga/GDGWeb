@@ -1,3 +1,4 @@
 django
 django-allauth
 google-api-python-client
+Pillow
