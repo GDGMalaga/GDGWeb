@@ -1,11 +1,6 @@
 from django.conf.urls import patterns, url
 
 from . import views
-from django.shortcuts import redirect
-
-from django.views.generic.edit import CreateView
-from django.contrib.auth.forms import UserCreationForm
-
 
 urlpatterns = patterns('',
                        url(r'^$', views.home, name='home'),

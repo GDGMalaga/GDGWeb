@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.utils import timezone
-import datetime
 from www.models import Curso, Grupo
 
 # Create your tests here.

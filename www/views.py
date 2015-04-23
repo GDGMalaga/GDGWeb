@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
-from django.http import *
-from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth import login as auth_login
 
@@ -39,7 +38,8 @@ def login(request):
     To authenticate a given username and password, use authenticate().
     It takes credentials in the form of keyword arguments,
     for the default configuration this is username and password,
-    and it returns a User object if the password is valid for the given username.
+    and it returns a User object if the password
+    is valid for the given username.
     If the password is invalid, authenticate() returns None.
     '''
     logout(request)

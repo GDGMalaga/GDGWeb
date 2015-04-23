@@ -35,9 +35,10 @@ class Grupo(models.Model):
     Grupo de estudio de una tecnologia
 
     El Grupo deberia tener como relación opcional una lista de cursos que ver.
-    Por ejemplo el grupo de estudio de Django podria reunirse para el curso de Django de Coursera, suponiendo que haya uno.
+    Por ejemplo el grupo de estudio de Django podria reunirse
+    para el curso de Django de Coursera, suponiendo que haya uno.
     """
-    #cursos = models.ForeignKey(Curso)
+    # cursos = models.ForeignKey(Curso)
     name = models.CharField(max_length=50)
     pub_date = models.DateField()
 
