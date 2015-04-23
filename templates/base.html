@@ -54,13 +54,19 @@
                 <ul class="nav pull-right">
                     <!--<li><a href="/signup">Sign Up</a></li>
                     <li class="divider-vertical"></li>-->
-                    {% if user.is_authenticated == True %}
+                    {% if user.is_authenticated == False %}
+                    {% if form.errors %}
+                        <p>Your username and password didn't match. Please try again.</p>
+                    {% endif %}
                     <li class="dropdown" id="menuLogin">
                         <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Sign In <strong class="caret"></strong></a>
                         <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 10px;">
-                            <form class="form" id="formLogin" method="post" action="login" accept-charset="UTF-8">
+                            <form class="form" id="formLogin" method="post" action="{% url 'www.views.login' %}" accept-charset="UTF-8">
+                                {% csrf_token %}
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
+                                {{ form.username }}
                                 <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
+                                {{ form.password }}
                                 <input style="float: left; margin-right: 10px;" type="checkbox" name="remember-me" id="remember-me" value="1">
                                 <label class="string optional" for="user_remember_me"> Remember me</label>
                                 <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
@@ -71,10 +77,9 @@
                         </div>
                     </li>
                     {% else %}
-                    <!--TODO: To be fixed when model is ready. This is just a place-holder for now-->
-                    {% with name="Antonio" %}
+                        
                     <li class="dropdown" id="menuProfile">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">{{ name }} <strong class="caret"></strong></a>
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">{{ user.username }} <strong class="caret"></strong></a>
                         <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 10px;">
                             <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
                             <h2>Nicole Pearson</h2>
@@ -86,10 +91,9 @@
                                 <span class="tags">jquery</span>
                                 <span class="tags">bootstrap3</span>
                             </p>
+                            <a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>
                         </div>
                     </li>
-                    {% endwith %}
-                    <!--/TODO-->
                     {% endif %}
                 </ul>
             </div><!--/.nav-collapse -->
