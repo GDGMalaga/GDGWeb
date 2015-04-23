@@ -81,7 +81,7 @@ USE_TZ = True
 # Required for editing the allauth templates
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 # Required for centralized Statifiles Dir
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
 # Static files (CSS, JavaScript, Images)
