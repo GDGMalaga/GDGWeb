@@ -54,7 +54,6 @@ ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_VERIFICATION = None
 
 
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -111,11 +110,11 @@ STATIC_URL = '/static/'
 # http://django-allauth.readthedocs.org/en/latest/configuration.html
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    
+
     # Required by `allauth` template tags
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
-        
+
     # `allauth` specific context processors
     'allauth.account.context_processors.account',
     'allauth.socialaccount.context_processors.socialaccount',
@@ -127,7 +126,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
-    
+
 )
 
-ACCOUNT_EMAIL_VERIFICATION="none"
+ACCOUNT_EMAIL_VERIFICATION = "none"
