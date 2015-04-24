@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block 'content' %}
-<!-- TODO -->
+{% include '_navbar.html' with page='home' %}
+
+<div class="jumbotron">
+    <div class="container">
+    <p> 
+    El GDG Málaga tiene como objetivo difundir las tecnologías de Google en Málaga, así como impulsar cualquier actividad relacionada con el mundo de la informática. Queremos crear una comunidad de entusiastas de la tecnología, que puedan ampliar sus conocimientos personales con los de otros miembros, ya sea hablando de las tecnologías de Google o no. 
+    Queremos ayudar a difundir estos conocimientos prácticos, tanto si lo que quieres es aprender, como si quieres darlos a conocer. Creemos que el hecho de encontrarnos todos tan cerca, estudiando o trabajando en la Universidad de Málaga, puede ayudar a que estas experiencias y conocimientos nos lleguen más fácilmente. Siempre es mejor aprender en compañía y, ya de paso, divertirse en el proceso.</p>
+    <button class="btn btn-red btn-lg pull-right">¡Únete a GDG Málaga!</button>
+    </div>
+</div>
 {% endblock%}

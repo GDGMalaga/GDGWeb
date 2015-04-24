@@ -39,10 +39,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-
     # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
     
@@ -120,7 +118,7 @@ USE_TZ = True
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 
 # Required for centralized Statifiles Dir
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
 # Static files (CSS, JavaScript, Images)

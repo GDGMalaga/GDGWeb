@@ -4,7 +4,9 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class UserProfile(models.Model):
+
     """
     Datos adicionales para un usuario
     """
@@ -13,10 +15,10 @@ class UserProfile(models.Model):
     about = models.CharField(max_length=200)
     hobbies = models.CharField(max_length=200)
     website = models.URLField(blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __unicode__(self):
         return "<UserProfile: %s>" % (self.user.username)
+
 
 class Skill(models.Model):
     skill_name = models.CharField(max_length=30)
@@ -25,14 +27,17 @@ class Skill(models.Model):
     def __unicode__(self):
         return "Habilidad : %s" % (self.skill_name)
 
+
 class Grupo(models.Model):
+
     """
     Grupo de estudio de una tecnologia
 
-    El Grupo deberia tener como relación opcional una lista de cursos que ver. 
-    Por ejemplo el grupo de estudio de Django podria reunirse para el curso de Django de Coursera, suponiendo que haya uno.
+    El Grupo deberia tener como relación opcional una lista de cursos que ver.
+    Por ejemplo el grupo de estudio de Django podria reunirse
+    para el curso de Django de Coursera, suponiendo que haya uno.
     """
-    #cursos = models.ForeignKey(Curso)
+    # cursos = models.ForeignKey(Curso)
     name = models.CharField(max_length=50)
     pub_date = models.DateField()
 
@@ -41,6 +46,7 @@ class Grupo(models.Model):
 
 
 class Curso(models.Model):
+
     """
     Curso que se realizará en el GDG (como curso de Django, por ejemplo ;) )
     Curso debería tener una relación con Grupo, ¿no?
