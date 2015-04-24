@@ -15,7 +15,6 @@ class UserProfile(models.Model):
     about = models.CharField(max_length=200)
     hobbies = models.CharField(max_length=200)
     website = models.URLField(blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
 
     def __unicode__(self):
         return "<UserProfile: %s>" % (self.user.username)
