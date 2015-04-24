@@ -12,3 +12,5 @@ before_script:
   - flake8 .
 script:
   - python manage.py test
+notifications:
+  slack: gdgmalaga:ddHhBO6Zao6SHkWXMXVSgjgJ
