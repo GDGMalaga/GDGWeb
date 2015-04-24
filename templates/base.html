@@ -4,109 +4,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>GDG Málaga {% block 'title' %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
 </head>
 <body>
-{% block nav %}
-    <!--fixed navbar-->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">
-                    <img alt="gdgmalaga" src="{% static 'img/logo.png' %}"/>
-                </a>
-                <!--<h1 class="menu-logo hidden-phone navbar-brand"></h1>-->
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        {% block nav-home %}
-                            <a tabindex="1" class="menu-item" href="/"> Información</a>
-                        {% endblock %}
-                    </li>
-                    <li>
-                        {% block nav-calendar %}
-                        <a tabindex="2" class="menu-item" href="{% url 'www.views.calendario' %}">Calendario</a>
-                        {% endblock %}
-                    </li>
-                    <li>
-                        {% block nav-grupos %}
-                        <a tabindex="3" class="menu-item" href="{% url 'www.views.grupos' %}">Grupos</a>
-                        {% endblock %}
-                    </li>
-                    <li>
-                        {% if user.is_authenticated == False %} 
-                        <a tabindex="4" class="menu-item" href="{% url 'www.views.accede' %}">Accede</a> 
-                        {% endif %}
-                    </li>
-                </ul>
-                <ul class="nav pull-right">
-                    <!--<li><a href="/signup">Sign Up</a></li>
-                    <li class="divider-vertical"></li>-->
-                    {% if user.is_authenticated == False %}
-                    {% if form.errors %}
-                        <p>Your username and password didn't match. Please try again.</p>
-                    {% endif %}
-                    <li class="dropdown" id="menuLogin">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Sign In <strong class="caret"></strong></a>
-                        <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 10px;">
-                            <form class="form" id="formLogin" method="post" action="{% url 'www.views.login' %}" accept-charset="UTF-8">
-                                {% csrf_token %}
-                                <input style="margin-bottom: 15px;" type="text" placeholder="Username" id="username" name="username">
-                                {{ form.username }}
-                                <input style="margin-bottom: 15px;" type="password" placeholder="Password" id="password" name="password">
-                                {{ form.password }}
-                                <input style="float: left; margin-right: 10px;" type="checkbox" name="remember-me" id="remember-me" value="1">
-                                <label class="string optional" for="user_remember_me"> Remember me</label>
-                                <input class="btn btn-primary btn-block" type="submit" id="sign-in" value="Sign In">
-                                <label style="text-align:center;margin-top:5px;width:100%">or</label>
-                                <input class="btn btn-primary btn-block" type="button" id="sign-in-google" value="Sign In with Google">
-                                <input class="btn btn-primary btn-block" type="button" id="sign-in-twitter" value="Sign In with Twitter">
-                            </form>
-                        </div>
-                    </li>
-                    {% else %}
-                        
-                    <li class="dropdown" id="menuProfile">
-                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">{{ user.username }} <strong class="caret"></strong></a>
-                        <div class="dropdown-menu pull-right" style="padding: 15px; padding-bottom: 10px;">
-                            <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
-                            <h2>Nicole Pearson</h2>
-                            <p><strong>About: </strong> Web Designer / UI. </p>
-                            <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
-                            <p><strong>Skills: </strong>
-                                <span class="tags">html5</span> 
-                                <span class="tags">css3</span>
-                                <span class="tags">jquery</span>
-                                <span class="tags">bootstrap3</span>
-                            </p>
-                            <a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>
-                        </div>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div><!--/.container -->
-    </nav><!--/.navbar-fixed-top-->
-{% endblock %}
-<div id="content">
+<header>
+    <object id="logo" type="image/svg+xml" data="{% static 'img/logo.svg' %}">GDG Málaga</object>
+</header>
 {% block 'content' %}
-
 {% endblock%}
-</div>
 <footer>
-	<!-- TODO -->
+     <p>
+        <strong>Disclaimer:</strong> GDG Málaga is an independent group; our activities and the opinions expressed on this webpage should in no way be linked to Google, the corporation.
+    </p>
 </footer>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>
