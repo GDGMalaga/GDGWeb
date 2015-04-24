@@ -18,6 +18,18 @@ footer{
 
 }
 
+#group-nav{
+    margin-bottom: 30px;
+}
+
+blockquote.novedad{
+    font-size: 14px;
+}
+
+
+blockquote.novedad small{
+    font-size: 16px;
+}
 
 
 
@@ -105,4 +117,62 @@ footer{
     -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px 0 inset;
     -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px 0 inset;
     box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px 0 inset;
+}
+
+/* */
+
+
+.bs-docs-sidebar{
+    margin-top: 25px;
+}
+
+.bs-docs-sidebar .nav>li>a {
+  display: block;
+  padding: 4px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #767676;
+  cursor: default;
+}
+
+.bs-docs-sidebar .nav>li>a:hover {
+  color: #d14836;
+  background-color: transparent;
+  border-left: 1px solid #d14836;
+}
+
+.bs-docs-sidebar .nav>.active:focus>a,
+.bs-docs-sidebar .nav>.active:hover>a,
+.bs-docs-sidebar .nav>.active>a {
+  padding-left: 18px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #d14836;
+  background-color: transparent;
+  border-left: 3px solid #d14836;
+}
+
+.bs-docs-sidebar .nav .nav {
+  padding-bottom: 10px;
+}
+
+.bs-docs-sidebar .nav .nav>li>a {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.bs-docs-sidebar .nav .nav>li>a:focus,
+.bs-docs-sidebar .nav .nav>li>a:hover {
+  padding-left: 29px;
+}
+
+.bs-docs-sidebar .nav .nav>.active:focus>a,
+.bs-docs-sidebar .nav .nav>.active:hover>a,
+.bs-docs-sidebar .nav .nav>.active>a {
+  padding-left: 28px;
+  font-weight: 500;
 }

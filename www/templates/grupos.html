@@ -10,7 +10,56 @@
 
 {# Grupos' content #}
 {% block content %}
-<div class="container" style="min-height:500px">
+<div class="container-fluid" style="min-height:500px">
+
+<div class="row" style="margin-bottom:60px;">
+	<div class="col-md-3">		
+		<nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm">
+            <ul class="nav bs-docs-sidenav">
+              
+                <li class="active">
+  				<a>Grupos</a>
+	  				<ul class="nav">
+	    				<li><a>Grupo de Desarrollo Web (2015)</a></li>
+	    				<li><a>Grupo de Seguridad (2015)</a></li>
+	    				<li><a>Grupo de BlahBleh (2014)</a></li>
+	  				</ul>
+				</li>
+            </ul>            
+          </nav>
+
+
+	</div>
+	<div class="col-md-9">
+	<h2>Grupo de Desarrollo Web (2015)</h2>
+	<hr>
+	<ul id="group-nav" class="nav nav-tabs">
+  		<li role="presentation" class="active"><a href="#">Novedades</a></li>
+  		<li role="presentation"><a href="#">Recursos</a></li>
+  		<li role="presentation"><a href="#">Inscritos</a></li>
+  		<li role="presentation"><a href="#">Comunidad</a></li>
+	</ul>
+    
+	<blockquote class="novedad">
+		<h4>Completado el Curso de HTML y CSS de Udacity</h4>
+		<p>En la sesión del pasado Lunes 19 terminamos de ver los vídeos que nos quedaban del curso de HTML y CSS de Udacity. En concreto, los siguientes vídeos fueron proyectados:
+		<ul>
+			<li><a href="#">Responsive design with Media Queries</a></li>
+			<li><a href="#">UXD: further steps in Iterface Designs</a></li>
+		</ul>
+		</p>
+		<small>24 de Abril de 2015</small>
+	</blockquote>
+
+	<blockquote class="novedad">
+		<h4>¡Visita a Madrid: Google Spain, Tuenti, etc…!</h4>
+		<p>Como recompensa por un año apasionante de código y comunidad, GDG Málaga está organizando una visita a Madrid en la cual visitaremos las instalaciones de varias empresas tecnológicas, incluyendo Google Spain, Telefónica, Tuenti, etc…. Rellena <a>este formulario de Google</a> si estás interesado en participar en la actividad.</p>
+		<small>22 de Abril de 2015</small>
+	</blockquote>
+		
+
+	</div>
+</div>
 
 </div>
 {% endblock%}
