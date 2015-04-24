@@ -1,7 +1,15 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block 'content' %}
+{# Custom title for Grupos #}
+{% block head_title %}GDG Málaga - Grupos{% endblock %}
+
+{# Import of navbar with selected page #}
+{% block navbar%}
 {% include '_navbar.html' with page='grupos' %}
+{% endblock %}
+
+{# Grupos' content #}
+{% block content %}
 <div class="container" style="min-height:500px">
 
 </div>

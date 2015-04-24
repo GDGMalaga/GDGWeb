@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% load staticfiles %}
-{% block 'content' %}
+{# Custom title for Calendario #}
+{% block head_title %}GDG Málaga - Calendario{% endblock %}
+
+{# Import of navbar with selected page #}
+{% block navbar%}
 {% include '_navbar.html' with page='calendario' %}
+{% endblock %}
+
+{# Calendario's content #}
+{% block content %}
+
 <div class="container">
 	<iframe src="https://www.google.com/calendar/embed?src=ets.ing.informatica.uma%40gmail.com&ctz=Europe/Madrid" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </div>

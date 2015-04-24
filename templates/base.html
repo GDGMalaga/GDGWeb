@@ -1,18 +1,40 @@
-<!DOCTYPE html>
+{% load url from future %}
 {% load staticfiles %}
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>GDG Málaga {% block 'title' %}{% endblock %}</title>
+	<title>{% block head_title %}GDG Málaga{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    {# Block for addition of content within the head tag #}
+    {% block extra_head %}
+    {% endblock %}
 </head>
 <body>
 <header>
     <object id="logo" type="image/svg+xml" data="{% static 'img/logo.svg' %}">GDG Málaga</object>
 </header>
-{% block 'content' %}
+
+{# Import of the navbar #}
+{% block navbar %}
+{% include '_navbar.html' %}
 {% endblock%}
+
+{# Display of django messages #}
+{% if messages %}
+  {% for message in messages %}
+    <div class="container-fluid text-center alert alert-{% if message.tags %}{{ message.tags }}{% endif %} alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      {{message | safe}}
+    </div>
+  {% endfor %}
+{% endif %}
+
+{# Main content #}
+{% block content %}
+{% endblock%}
+
 <footer>
      <p>
         <strong>Disclaimer:</strong> GDG Málaga is an independent group; our activities and the opinions expressed on this webpage should in no way be linked to Google, the corporation.
@@ -20,5 +42,8 @@
 </footer>
 <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+{# Block for adding more content before closing the document's body #}
+{% block extra_body %}
+{% endblock %}
 </body>
 </html>
