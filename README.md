@@ -5,4 +5,5 @@ Website for a GDG Chapter.
 
 ### Slides
 
-* [Introduction to Docker & Kubernetes](./static/file/slides/kubernetes_qwiklab_next18extended.pptx) on Malaga Cloud Next 18 Extended by @espetro
+* [Introduction to Docker & Kubernetes](https://github.com/espetro/GDGWeb/blob/master/static/files/slides/kubernetes_qwiklab_next18extended.pdf) on Malaga Cloud Next 18 Extended by @espetro.
+
